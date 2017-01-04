@@ -35,10 +35,12 @@ if [ $? -eq 1 ]; then
   if [ -z $ANSIBLE_DEBUG ]; then
     apt-get -qq --assume-yes update > /dev/null 2>&1
     apt-get -qq --assume-yes install git python-pip python-setuptools python-dev python-paramiko python-yaml python-jinja2 python-httplib2 python-passlib python-six python-ecdsa > /dev/null 2>&1
+    pip install -U cffi
     pip install cryptography
   else
     apt-get --assume-yes update
     apt-get --assume-yes install git python-pip python-setuptools python-dev python-paramiko python-yaml python-jinja2 python-httplib2 python-passlib python-six python-ecdsa
+    pip install -U cffi
     pip install cryptography
   fi
 
