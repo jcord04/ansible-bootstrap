@@ -36,14 +36,14 @@ if [ $? -eq 1 ]; then
     apt-get -qq --assume-yes update > /dev/null 2>&1
     apt-get -qq --assume-yes install build-essential libssl-dev libffi-dev
     apt-get -qq --assume-yes install git python-pip python-setuptools python-dev python-paramiko python-yaml python-jinja2 python-httplib2 python-passlib python-six python-ecdsa > /dev/null 2>&1
-    pip install --upgrade setuptools pip
-    pip install cryptography
+    #pip install --upgrade setuptools pip
+    #pip install cryptography
   else
     apt-get --assume-yes update
     apt-get --assume-yes install build-essential libssl-dev libffi-dev
     apt-get --assume-yes install git python-pip python-setuptools python-dev python-paramiko python-yaml python-jinja2 python-httplib2 python-passlib python-six python-ecdsa
-    pip install --upgrade setuptools pip
-    pip install cryptography
+    #pip install --upgrade setuptools pip
+    #pip install cryptography
   fi
 
   if [ -z $branch ] && [ ! -z $ANSIBLE_BRANCH ]; then
