@@ -41,7 +41,7 @@ if [ $? -eq 1 ]; then
   #   pip install cryptography
   # else
     apt-get --assume-yes update
-    apt-get --assume-yes install build-essential autoconf libtool pkg-config libssl-dev libffi-dev python-dev libxml2-dev libxslt1-dev zlib1g-dev python-opengl python-imaging python-pyrex python-pyside.qtopengl qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3
+    apt-get --assume-yes install build-essential autoconf libtool pkg-config libssl-dev libffi-dev unzip python-dev libxml2-dev libxslt1-dev zlib1g-dev python-opengl python-imaging python-pyrex python-pyside.qtopengl qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3
     apt-get --assume-yes install git python-pip python-setuptools python-paramiko python-yaml python-jinja2 python-httplib2 python-passlib python-six python-ecdsa
     #pip install --upgrade setuptools pip
     pip install cryptography
