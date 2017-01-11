@@ -60,10 +60,10 @@ if [ $? -eq 1 ]; then
     echo "Cloning Ansible."
     if [ -z $ANSIBLE_DEBUG ]; then
       git clone --quiet --recursive https://github.com/ansible/ansible.git $ansible_dir > /dev/null 2>&1
-      cd $ansible_dir; git checkout ANSIBLE_STABLE_BRANCH --quiet
+      cd $ansible_dir; git checkout ANSIBLE_STABLE_BRANCH --quiet; cd
     else
       git clone --recursive https://github.com/ansible/ansible.git $ansible_dir
-      cd $ansible_dir; git checkout ANSIBLE_STABLE_BRANCH
+      cd $ansible_dir; git checkout ANSIBLE_STABLE_BRANCH; cd
     fi
   fi
 
