@@ -64,26 +64,29 @@ if [ $? -eq 1 ]; then
   if [ ! -d $ansible_dir ]; then
     echo "Cloning Ansible."
     if [ -z $ANSIBLE_DEBUG ]; then
-      git clone --quiet --recursive git://github.com/ansible/ansible.git $branch $ansible_dir > /dev/null 2>&1
+
+      wget https://github.com/ansible/ansible/archive/stable-1.9.zip -O /usr/local/lib/ansible.zip
+      unzip $ansible_dir/ansible.zip -d $ansible_dir/ansible
     else
-      git clone --recursive git://github.com/ansible/ansible.git $branch $ansible_dir
+      wget https://github.com/ansible/ansible/archive/stable-1.9.zip -O /usr/local/lib/ansible.zip
+      unzip $ansible_dir/ansible.zip -d $ansible_dir/ansible
     fi
   fi
 
-  if [ -z $checkout ] && [ ! -z $ANSIBLE_CHECKOUT ]; then
-    echo "Setting checkout target from environment."
-    checkout=$ANSIBLE_CHECKOUT
-  fi
+  # if [ -z $checkout ] && [ ! -z $ANSIBLE_CHECKOUT ]; then
+  #   echo "Setting checkout target from environment."
+  #   checkout=$ANSIBLE_CHECKOUT
+  # fi
 
-  if [ ! -z $checkout ]; then
-    echo "Checking out '$checkout'."
-    cd $ansible_dir
-    if [ -z $ANSIBLE_DEBUG ]; then
-      git checkout $checkout --quiet
-    else
-      git checkout $checkout
-    fi
-  fi
+  # if [ ! -z $checkout ]; then
+  #   echo "Checking out '$checkout'."
+  #   cd $ansible_dir
+  #   if [ -z $ANSIBLE_DEBUG ]; then
+  #     git checkout $checkout --quiet
+  #   else
+  #     git checkout $checkout
+  #   fi
+  # fi
 
   echo "Running setups tasks for Ansible."
   cd $ansible_dir
